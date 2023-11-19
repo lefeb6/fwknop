@@ -67,7 +67,7 @@ Example simple minimal fknop client:
     s.close()
 """
 import _fko
-from string import join
+#from string import join
 
 # FKO Constants definitions
 
@@ -1113,7 +1113,7 @@ class FkoAccess():
         """
         if len(self.port) < 1:
             raise FkoException("No port value in FkoAccess")
-        return self.host+','+self.proto+'/'+join(map(str,self.port),",")
+        return self.host+','+self.proto+'/'+",".join(map(str,self.port),",")
 
     def __call__(self):
         """Calls the str() method.
@@ -1146,7 +1146,7 @@ class FkoNatAccess():
         Generates and returns the properly formatted NAT Access Request
         string based on the object's ip and port values.
         """
-        return join([self.ip, str(self.port)], ",")
+        return ",".join([self.ip, str(self.port)])
 
     def __call__(self):
         """Calls the str() method.

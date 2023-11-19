@@ -38,7 +38,7 @@ fko_ext = Extension(
                     include_dirs = ['../lib/'],
                     library_dirs = ['../lib/.libs'],
                     libraries = ['fko'],
-                    sources = ['fkomodule.c']
+                    sources = ['fkomodule3.c']
 )
 
 setup (
